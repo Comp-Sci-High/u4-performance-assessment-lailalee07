@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <!-- Link to style.css -->
+     <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Sneaker Details</h1>
+    </div>
+
+    <nav>
+        <a href="/">Home</a>
+   <a href="/overview">Buy Now</a>
+    </nav>
+
+    <div>
+      
+        <h2 class="center"> <%=sneakerName%> </h2>
+        <img src=<%=imageURL%> class="main-image">
+        <div class="color-options">
+</div>
+     
+        <p class="center">$<%=marketPrice%> </p>
+
+        <!-- Use conditions to show the first button if the quantity is over 0. Otherwise, show the Sold Out button. -->
+          <%if(forSale=true){ %>
+            <button class="buy-now-button center">Buy Now</button>
+    <%} else{%>
+        <button class="buy-now-button" disabled>Sold Out</button>
+        <%}%>
+           <!-- Extra credit: Add JS such that when the Buy Now button is clicked, you add HTML underneath it that says "Added to cart" (review DOM manipulation!) -->
+
+  
+    </div>
+
+</body>
+</html>
