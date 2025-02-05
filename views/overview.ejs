@@ -1,41 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Use the category attribute to set the tab name -->
+    <title>...</title>
     <!-- Link to style.css -->
-     <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
     <div class="header">
-        <h1>Sneaker Details</h1>
+
+      <h1> <%=product%> </h1>
     </div>
 
     <nav>
-        <a href="/">Home</a>
-   <a href="/overview">Buy Now</a>
+      <a href="/">Home</a>
+      <a href="/overview">Buy Now</a>
+      <a href="/all">All Kicks</a>
     </nav>
-
-    <div>
+    
+    <h2 class="center">Rare Sneakers </h2>
+    <div class="section">
+      <!-- Modify the following to make one item card for each element of the items array -->
+      <!-- You should use the values from data to dynamically populate the image, item name, cost, and path -->
+      <% for(let i=0;i <items.length; i++){ %>
       
-        <h2 class="center"> <%=sneakerName%> </h2>
-        <img src=<%=imageURL%> class="main-image">
-        <div class="color-options">
-</div>
-     
-        <p class="center">$<%=marketPrice%> </p>
-
-        <!-- Use conditions to show the first button if the quantity is over 0. Otherwise, show the Sold Out button. -->
-          <%if(forSale=true){ %>
-            <button class="buy-now-button center">Buy Now</button>
-    <%} else{%>
-        <button class="buy-now-button" disabled>Sold Out</button>
-        <%}%>
-           <!-- Extra credit: Add JS such that when the Buy Now button is clicked, you add HTML underneath it that says "Added to cart" (review DOM manipulation!) -->
-
-  
+      <div class="item-card">
+        <img src="<%=items[i].imageURL%>"/>
+        <h3> <%=items[i].sneakerName%> </h3>
+        <p>$<%=items[i].marketPrice%></p>
+        <a href="<%=items[i].path%>">More info</a>
+      </div>
+   <% } %>
     </div>
-
-</body>
+  </body>
 </html>
